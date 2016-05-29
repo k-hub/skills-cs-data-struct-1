@@ -1,0 +1,115 @@
+Runtime
+
+1. When calculating the Big O notation for a particular algorithm, it’s necessary to consider the length of time it takes for the algorithm to run as the algorithm’s workload approaches the size of infinity. What is the workload of a function that takes in a list of integers and returns a new list of the even integers?
+    
+    It runs in O(n).
+
+
+    nums = [1, 2, 4, 5, 6, 9, ...]
+    even_nums = []
+
+    for num in nums:                  # for loop is O(n).
+        if num % 2 == 0:              
+            even_nums.append(num)     # appending is O(1).
+
+    return even_nums
+
+
+2. Order the following runtimes in ascending order by efficiency as n approaches infinity:
+    O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n)
+
+----------------------------
+Stacks and Queues
+
+1. In the following cases, would a stack or queue be an appropriate data structure?
+    1. The process of loading and unloading pallets onto a flatbed truck   - stack
+    2. Putting bottle caps on bottles of beer as they roll down an assembly line   - queue
+    3. Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2)  - stack
+2. Describe 2 more examples of when a queue would be an appropriate data structure.
+    1. Waiting in line to make a purchase.
+    2. Hackbright help queue.
+3. Describe 2 more examples of when a stack would be an appropriate data structure.
+    1. Traceback message.
+    2. Getting to a moving box that is underneath another box. 
+
+----------------------------
+Linked Lists
+
+1. Given the below linked list, which are the nodes? What is the data for each node? Where is the head? Where is the tail? (Please be as specific as possible — exactly which parts of the diagram correspond to each part? Arrows? Boxes? Text?)
+
+    Nodes: 
+        <node: Apple (consisting of the data and next)>, 
+        <node: Berry (consisting of the data and next)>, 
+        <node: Cherry (consisting of the data and next)>
+    Data: "Apple", "Berry", "Cherry"
+
+    The head is an attribute of LLIST and it points to <node: Apple>. 
+
+    There is no tail in the diagram. 
+
+2. What’s the difference between a doubly and singly linked list?
+    A singly linked list can only point to the next node in the sequence. A doubly linked list points to the next node in the sequence as well as it's previous node.
+
+3. Why is it faster to append to a linked list if we keep track of the tail as an attribute?
+    If we only keep track of the head, then we can only find the last node in the sequence by traversing through the linked list and the last node will be the node that points to None. By having a tail attribute, we can have the tail point to the last node and append a new node to that node.
+
+----------------------------
+Trees
+1. Given the above tree, in what order would a Breadth First Search (BFS) algorithm visit each node until finding burrito (starting at food)?
+    
+    pop(0) and determine if node is node we are looking for. If not, then enqueue its children to the queue. Win fast algorithm because it stops as soon as the node of interest is found. It goes through each row. 
+    
+    [food]
+    [Italian, Indian, Mexican]
+    [Indian, Mexican, lasagna, pizza]
+    [Mexican, lasagna, pizza, tikka masala, saag]
+    [lasagna, pizza, tikka masala, saag, burrito, tacos, enchiladas]  
+    [pizza, tikka masala, saag, burrito, tacos, enchiladas]  # lasanga has no chilren so nothing is appended. 
+    [tikka masala, saag, burrito, tacos, enchiladas, thin crust, Chicago-style, New York-style, Sicilian]  # tikka masala has no chilren so nothing is appended. 
+    [saag, burrito, tacos, enchiladas, thin crust, Chicago-style, New York-style, Sicilian]  # saag has no chilren so nothing is appended. 
+    [burrito, tacos, enchiladas, thin crust, Chicago-style, New York-style, Sicilian]
+
+    Pop burrito. Found burrito!
+
+
+2. Given the above tree, in what order would a Depth First Search algorithm visit each node until finding Chicago-style (starting at food)?
+
+    pop() and determine if node is the node we are looking for. If it's not, push its children to the stack. Win fast algorithm because it stops as soon as the node of interest is found. It goes through each branch. 
+
+    [food]
+    [Italian, Indian, Mexican]
+    [Italian, Indian, burrito, tacos, enchiladas]
+    [Italian, Indian, burrito, tacos]
+    [Italian, Indian, burrito]
+    [Italian, Indian]
+    [Italian, tikka masala, saag]
+    [Italian, tikka masala]
+    [Italian]
+    [lasagna, pizza]
+    [lasagna, thin crust, Chicago-style, New York-style, Sicilian]
+    [lasagna, thin crust, Chicago-style, New York-style]
+    [lasagna, thin crust, Chicago-style]
+
+    Pop Chicago-style. Found Chicago-style!
+
+
+3. How is a binary search tree different from other trees?
+    Each node in a binary search tree always has a left and right child, even if they are None. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
